@@ -1,0 +1,39 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+record Person(String name,int age) {
+};
+record Address(String city,String state) {};
+
+@Configuration
+public class HelloWorldConfiguration {
+	HelloWorldConfiguration(){
+		
+	}
+	
+	@Bean("Myname")
+	public String name() {
+		return "Harsh Choudhary";
+	}
+	
+	@Bean("Myage")
+	public int age() {
+		return 19;
+	}
+	
+	@Bean
+	public Address address() {
+		return new Address("Samastipur","Bihar");
+	}
+	@Bean 
+	public Person person1() {
+		return (new Person("Ravi",19));
+	}
+	
+	@Bean
+	public Person person2MethodCall() {
+		return new Person(name(),age());
+	}
+}

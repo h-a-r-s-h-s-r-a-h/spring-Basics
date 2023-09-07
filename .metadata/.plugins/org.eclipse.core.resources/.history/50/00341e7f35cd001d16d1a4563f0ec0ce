@@ -1,0 +1,24 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+record Person(String name,int age) {
+};
+
+@Configuration
+public class HelloWorldConfiguration {
+	HelloWorldConfiguration(){
+		
+	}
+	
+	@Bean("Myage")
+	public int age() {
+		return 19;
+	}
+	
+	@Bean 
+	public Person person() {
+		return (new Person("Ravi",19));
+	}
+}

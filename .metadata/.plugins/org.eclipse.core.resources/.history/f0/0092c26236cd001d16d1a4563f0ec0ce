@@ -1,0 +1,19 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class AppHelloWorldSpring {
+
+	public static void main(String[] args) {
+		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		
+		var address = context.getBean(Address.class);
+		System.out.print(address);
+		
+		var my = context.getBean("person2MethodCall");
+		System.out.println(my);
+		
+		context.close();
+	}
+
+}

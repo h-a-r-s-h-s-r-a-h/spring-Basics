@@ -1,0 +1,29 @@
+package com.harsh.learningspringframework5;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
+record Person(String name,int age) {};
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+	@Bean
+	@Primary
+	public Person person1() {
+		return new Person("Harsh",19);
+	}
+	
+	@Bean
+	@Qualifier("printPerson2")
+	public Person person2() {
+		return new Person("Kartik",19);
+	}
+	
+	@Bean
+	public Person person3(@Qualifier("printPerson2") Person perso) {
+		return perso;
+	}
+}

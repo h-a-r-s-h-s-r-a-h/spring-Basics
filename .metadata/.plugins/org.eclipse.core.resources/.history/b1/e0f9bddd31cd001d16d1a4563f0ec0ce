@@ -1,0 +1,13 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LearningSpringFramework4Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearningSpringFramework4Application.class, args);
+	}
+
+}

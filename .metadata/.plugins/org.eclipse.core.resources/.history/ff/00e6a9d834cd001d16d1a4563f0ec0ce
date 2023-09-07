@@ -1,0 +1,14 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class AppHelloWorldSpring {
+
+	public static void main(String[] args) {
+		Person my = new Person("ravi",10);
+		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		var person1 = context.getBean(Person.class);
+		System.out.print(person1);
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.harsh.learningspringframework3;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+record Person(String name, int age) {};
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+	@Bean
+	public String name() {
+		return "Harsh Choudhary";
+	}
+	
+	@Bean
+	public int age() {
+		return 19;
+	}
+	
+	@Bean
+	public Person person() {
+		var firstPerson = new Person("Ravi",20);
+		firstPerson.age();
+		firstPerson.name();
+		return firstPerson;
+	}
+
+}

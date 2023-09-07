@@ -1,0 +1,46 @@
+package com.harsh.learningspringframework4;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+record Person(String name,int age,Address address) {
+};
+record Address(String city,String state) {};
+
+@Configuration
+public class HelloWorldConfiguration {
+	HelloWorldConfiguration(){
+		
+	}
+	
+	@Bean(name = "Myname")
+	public String name() {
+		return "Harsh Choudhary";
+	}
+	
+	@Bean(name = "Myage")
+	public int age() {
+		return 19;
+	}
+	
+	@Bean
+	public Address address() {
+		return new Address("Samastipur","Bihar");
+	}
+	@Bean 
+	public Person person1() {
+		return (new Person("Ravi",19,new Address("RC","delhi")));
+	}
+	
+	//Making methods by methods call which is declared earlier;;
+	@Bean
+	public Person person2() {
+		return new Person(name(),age(),address());
+	}
+
+	//Making methods by use of parameters;;
+	@Bean
+	public Person person3(String name,int age,Address address) {
+		return new Person(name,age,address);
+	}
+}

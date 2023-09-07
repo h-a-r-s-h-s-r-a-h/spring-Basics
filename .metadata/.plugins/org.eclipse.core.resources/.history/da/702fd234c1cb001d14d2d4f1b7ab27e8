@@ -1,0 +1,13 @@
+package com.harsh.learningspringframework2.copy;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LearningSpringFramework2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearningSpringFramework2Application.class, args);
+	}
+
+}

@@ -1,0 +1,47 @@
+package com.harsh.learningspringframework4;
+
+import java.util.Arrays;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class AppHelloWorldSpring {
+
+	public static void main(String[] args) {
+		var context = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		
+		//calling methods by different process.
+		// we can also use this :-
+		//var address = context.getBean("address");
+		var address = context.getBean(Address.class);
+		System.out.println(address);
+		
+		var myName = context.getBean("Myname");
+		System.out.println("My name :- "+myName);
+		
+		var myAge = context.getBean("Myage");
+		System.out.println("My age :- "+myAge);
+		
+		var ravi = context.getBean("person1");
+		System.out.println(ravi);
+		
+		var byMethodCall = context.getBean("person2");
+		System.out.println("By method call :- "+byMethodCall);
+		
+		
+		var byParameters = context.getBean("person3");
+		System.out.println("By parameters :- "+byParameters);
+		
+		// listing all Bean present;;
+		String[] listAllBean = context.getBeanDefinitionNames();
+		Arrays.stream(listAllBean).forEach(System.out::println);
+		
+		//Counting all bean present;;
+		int noOfAllBean = context.getBeanDefinitionCount();
+		System.out.println("No of bean :- "+noOfAllBean);
+		
+		
+		
+		context.close();
+	}
+
+}

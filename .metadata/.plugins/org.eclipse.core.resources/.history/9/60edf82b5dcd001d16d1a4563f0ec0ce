@@ -1,0 +1,13 @@
+package com.harsh.learningspringframework5;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LearningSpringFramework5Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LearningSpringFramework5Application.class, args);
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.harsh.learningspringframework4;
+
+public class HelloWorldConfiguration {
+
+}
